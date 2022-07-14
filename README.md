@@ -9,7 +9,7 @@ Using `uuid` in eloquent model.
 ## Installation
 
 ```bash
-composer require DT/laravel-uuid-model
+composer require dtt/laravel-uuid-model
 ```
 
 ## Usage
