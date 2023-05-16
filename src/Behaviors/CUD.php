@@ -27,6 +27,13 @@ trait CUD
             }
         });
 
+        static::saving(function (Model $model) {
+            $model->updated_at = Carbon::now();
+            if (Auth::user()) {
+                $model->updated_by = Auth::user()->id;
+            }
+        });
+
         static::updated(function (Model $model) {
         });
 

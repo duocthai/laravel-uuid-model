@@ -27,6 +27,13 @@ trait CUDBackPack
             }
         });
 
+        static::saving(function (Model $model) {
+            $model->updated_at = Carbon::now();
+            if (backpack_user()) {
+                $model->updated_by = backpack_user()->id;
+            }
+        });
+
         static::updated(function (Model $model) {
         });
 
